@@ -24,22 +24,22 @@ void dr_exit()
     i2c_exit(file);
 }
 
-short dr_get_reg_data(short reg)
+short dr_get_reg_data(char reg)
 {
     if (reg >= 0 && reg <= 7) {
-        i2c_write_short(file, reg);
+        i2c_write_byte(file, reg << 1);
         short msg = i2c_read_short(file);
         return msg;
     }
     return -1;
 }
 
-int dr_set_reg_data(short reg, short data)
+int dr_set_reg_data(char reg, short data)
 {
     if (reg >= 0 && reg <= 7) {
         if (regs_masks[reg] & data) {
-            i2c_write_short(file, reg);
-            i2c_write_short(file, data);
+            i2c_write_byte(file, (reg << 1) + 1u);
+            i2c_write_short(file, data & regs_masks[reg]);
             return 0;
         }
     }

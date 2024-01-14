@@ -1,0 +1,5 @@
+../Core/Src/i2c_slave.c:31:10:Slave_i2c_Resieve_16	24	static
+../Core/Src/i2c_slave.c:47:10:Slave_i2c_Transmit_16	24	static
+../Core/Src/i2c_slave.c:58:10:Slave_Listen4	24	static
+../Core/Src/i2c_slave.c:70:10:slave_set_reg_data	24	static
+../Core/Src/i2c_slave.c:78:10:slave_send_reg_data	16	static

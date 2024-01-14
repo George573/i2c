@@ -2,8 +2,8 @@
 #define DRIVER
 
 void dr_init(short slave_addr);
-short dr_get_reg_data(short reg);
-int dr_set_reg_data(short reg, short data);
+short dr_get_reg_data(char reg);
+int dr_set_reg_data(char reg, short data);
 
 
 /*--------REGISTERS MASK----------*/

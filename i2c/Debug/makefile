@@ -60,8 +60,8 @@ all: main-build
 main-build: i2c.elf secondary-outputs
 
 # Tool invocations
-i2c.elf i2c.map: $(OBJS) $(USER_OBJS) /home/unicorn/STM32CubeIDE/workspace_1.14.0/i2c/STM32F769NIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "i2c.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/unicorn/STM32CubeIDE/workspace_1.14.0/i2c/STM32F769NIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+i2c.elf i2c.map: $(OBJS) $(USER_OBJS) /home/unicorn/Documents/i2c/i2c/STM32F769NIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "i2c.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/unicorn/Documents/i2c/i2c/STM32F769NIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="i2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
